@@ -17,7 +17,7 @@ public class Ejercicio10 extends Application {
         // 1. Creamos la barra de menú principal
         MenuBar menuBar = new MenuBar();
 
-        // 2. Submenú: Fichero (Nuevo, Abrir, Guardar, Separador, Salir)
+        // 2. Submenú: Fichero (Nuevo, Abrir, Guardar, Separador, Salir
         Menu menuFichero = new Menu("Fichero");
         MenuItem itemNuevo = new MenuItem("Nuevo");
         MenuItem itemAbrir = new MenuItem("Abrir");
