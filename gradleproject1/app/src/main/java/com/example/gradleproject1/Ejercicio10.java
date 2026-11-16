@@ -14,10 +14,10 @@ public class Ejercicio10 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Creamos la barra de menú principal
+        //  barra de menú 
         MenuBar menuBar = new MenuBar();
 
-        // 2. Submenú: Fichero (Nuevo, Abrir, Guardar, Separador, Salir
+        // Submenu: Fichero (Nuevo, Abrir, Guardar, Separador, Salir
         Menu menuFichero = new Menu("Fichero");
         MenuItem itemNuevo = new MenuItem("Nuevo");
         MenuItem itemAbrir = new MenuItem("Abrir");
@@ -25,12 +25,12 @@ public class Ejercicio10 extends Application {
         SeparatorMenuItem sepFichero = new SeparatorMenuItem();
         MenuItem itemSalir = new MenuItem("Salir");
 
-        // Funcionalidad extra para que "Salir" cierre la aplicación
+        // "Salir" cierre la aplicación
         itemSalir.setOnAction(e -> Platform.exit());
 
         menuFichero.getItems().addAll(itemNuevo, itemAbrir, itemGuardar, sepFichero, itemSalir);
 
-        // 3. Submenú: Clientes (Listar, Separador, Informe Clientes)
+        // Clientes (Listar, Separador, Informe Clientes)
         Menu menuClientes = new Menu("Clientes");
         MenuItem itemListarClientes = new MenuItem("Listar");
         SeparatorMenuItem sepClientes = new SeparatorMenuItem();
@@ -38,7 +38,7 @@ public class Ejercicio10 extends Application {
 
         menuClientes.getItems().addAll(itemListarClientes, sepClientes, itemInformeClientes);
 
-        // 4. Submenú: Productos (Listar, Separador, Informe Productos)
+        // Submenu: Productos (Listar, Separador, Informe Productos)
         Menu menuProductos = new Menu("Productos");
         MenuItem itemListarProductos = new MenuItem("Listar");
         SeparatorMenuItem sepProductos = new SeparatorMenuItem();
@@ -46,13 +46,13 @@ public class Ejercicio10 extends Application {
 
         menuProductos.getItems().addAll(itemListarProductos, sepProductos, itemInformeProductos);
 
-        // 5. Añadimos los tres menús a la barra superior[cite: 2]
+        // Añadimos los tres mens a la barra superior
         menuBar.getMenus().addAll(menuFichero, menuClientes, menuProductos);
 
-        // 6. Layout VBox (sin padding para que la barra quede pegada arriba y a los lados)
+        // Layout VBox (sin padding para que la barra quede pegada arriba y a los lados)
         VBox root = new VBox(menuBar);
 
-        // 7. Escena y ventana con el título de la captura[cite: 2]
+        // Escena y ventana 
         Scene scene = new Scene(root, 350, 280);
         primaryStage.setTitle("Menú");
         primaryStage.setScene(scene);

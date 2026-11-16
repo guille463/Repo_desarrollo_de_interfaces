@@ -13,7 +13,7 @@ public class Ejercicio5 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Controles básicos requeridos por el enunciado
+        
         Label lblPrecio = new Label("Precio (€):");
         TextField txtPrecio = new TextField();
 
@@ -23,10 +23,10 @@ public class Ejercicio5 extends Application {
         Button btnCalcular = new Button("Calcular Cambio");
         Label lblResultado = new Label("Resultado:");
 
-        // 2. Lógica al pulsar el botón
+        
         btnCalcular.setOnAction(e -> {
             try {
-                // Trabajamos con enteros ya que la moneda mínima pedida es 1 euro
+               
                 int precio = Integer.parseInt(txtPrecio.getText().trim());
                 int dinero = Integer.parseInt(txtDinero.getText().trim());
 
@@ -44,7 +44,7 @@ public class Ejercicio5 extends Application {
                     int cambio = dinero - precio;
                     int resto = cambio;
 
-                    // Array ordenado de mayor a menor para devolver el mínimo de billetes/monedas
+                   
                     int[] denominaciones = {500, 100, 50, 20, 10, 2, 1};
                     StringBuilder desglose = new StringBuilder();
                     desglose.append("Cambio total: ").append(cambio).append(" €\n\nDesglose:\n");
@@ -67,11 +67,11 @@ public class Ejercicio5 extends Application {
             }
         });
 
-        // 3. Layout VBox
+        
         VBox root = new VBox(10, lblPrecio, txtPrecio, lblDinero, txtDinero, btnCalcular, lblResultado);
         root.setPadding(new Insets(15));
 
-        // 4. Escena y ventana (un poco más alta para que quepa todo el desglose)
+        
         Scene scene = new Scene(root, 320, 360);
         primaryStage.setTitle("Ejercicio 5 - Cambio");
         primaryStage.setScene(scene);

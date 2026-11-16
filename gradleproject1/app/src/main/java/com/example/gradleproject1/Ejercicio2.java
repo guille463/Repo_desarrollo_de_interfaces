@@ -18,7 +18,7 @@ public class Ejercicio2 extends Application {
     public void start(Stage primaryStage) {
         Label lblTitulo = new Label("Login Username and Password");
         
-        // Imagen (puedes usar una URL o una ruta local de tu proyecto)
+        // Imagen 
         ImageView imgUsuario = new ImageView(new Image("https://cdn-icons-png.flaticon.com/512/149/149071.png"));
         imgUsuario.setFitWidth(50);
         imgUsuario.setFitHeight(50);

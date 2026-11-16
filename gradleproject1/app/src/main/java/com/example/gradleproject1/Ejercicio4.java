@@ -15,7 +15,7 @@ public class Ejercicio4 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Controles básicos
+       
         Label lblCantidad = new Label("Cantidad en Euros (€):");
         TextField txtCantidad = new TextField();
 
@@ -26,7 +26,7 @@ public class Ejercicio4 extends Application {
         RadioButton rbLibras = new RadioButton("Libras (GBP)");
         RadioButton rbYenes = new RadioButton("Yenes (JPY)");
 
-        // Agrupamos los RadioButtons para que sean excluyentes entre sí
+        // Agrupamos los RadioButtons
         ToggleGroup grupoMonedas = new ToggleGroup();
         rbDolares.setToggleGroup(grupoMonedas);
         rbLibras.setToggleGroup(grupoMonedas);
@@ -38,14 +38,14 @@ public class Ejercicio4 extends Application {
         Button btnConvertir = new Button("Convertir");
         Label lblConversion = new Label("Conversión: -");
 
-        // 2. Lógica al pulsar el botón
+        
         btnConvertir.setOnAction(e -> {
             try {
                 double euros = Double.parseDouble(txtCantidad.getText().replace(",", "."));
                 double resultado = 0;
                 String simbolo = "";
 
-                // Comprobamos cuál está seleccionado con .isSelected()
+               
                 if (rbDolares.isSelected()) {
                     resultado = euros * 1.08;
                     simbolo = "$";
@@ -64,11 +64,11 @@ public class Ejercicio4 extends Application {
             }
         });
 
-        // 3. Layout VBox (añadimos los RadioButton directamente, el ToggleGroup no es visual)
+       
         VBox root = new VBox(10, lblCantidad, txtCantidad, lblMoneda, rbDolares, rbLibras, rbYenes, btnConvertir, lblConversion);
         root.setPadding(new Insets(15));
 
-        // 4. Escena y ventana
+        //Escena y ventana
         Scene scene = new Scene(root, 300, 310);
         primaryStage.setTitle("Ejercicio 4 - RadioButtons");
         primaryStage.setScene(scene);

@@ -14,7 +14,7 @@ public class Ejercicio7 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Controles básicos requeridos por el enunciado
+       
         Label lblNota = new Label("Introduce una nota (0 - 10):");
         TextField txtNota = new TextField();
 
@@ -23,8 +23,7 @@ public class Ejercicio7 extends Application {
 
         ListView<Double> listViewNotas = new ListView<>();
         Label lblResultados = new Label("Mayor: - | Menor: - | Media: -");
-
-        // 2. Evento botón "Añadir"
+        
         btnAnadir.setOnAction(e -> {
             try {
                 double nota = Double.parseDouble(txtNota.getText().replace(",", ".").trim());
@@ -41,7 +40,7 @@ public class Ejercicio7 extends Application {
             }
         });
 
-        // 3. Evento botón "Calcular"
+        
         btnCalcular.setOnAction(e -> {
             if (listViewNotas.getItems().isEmpty()) {
                 lblResultados.setText("No hay notas en la lista para calcular.");
@@ -51,8 +50,7 @@ public class Ejercicio7 extends Application {
             double mayor = Double.MIN_VALUE;
             double menor = Double.MAX_VALUE;
             double suma = 0;
-
-            // Recorremos directamente los elementos almacenados en el ListView
+          
             for (double nota : listViewNotas.getItems()) {
                 if (nota > mayor) {
                     mayor = nota;
@@ -66,12 +64,10 @@ public class Ejercicio7 extends Application {
             double media = suma / listViewNotas.getItems().size();
             lblResultados.setText(String.format("Mayor: %.2f | Menor: %.2f | Media: %.2f", mayor, menor, media));
         });
-
-        // 4. Layout VBox
+    
         VBox root = new VBox(10, lblNota, txtNota, btnAnadir, listViewNotas, btnCalcular, lblResultados);
         root.setPadding(new Insets(15));
-
-        // 5. Escena y ventana
+        
         Scene scene = new Scene(root, 340, 380);
         primaryStage.setTitle("Ejercicio 7 - Notas ListView");
         primaryStage.setScene(scene);

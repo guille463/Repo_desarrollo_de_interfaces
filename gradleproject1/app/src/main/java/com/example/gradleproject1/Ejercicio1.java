@@ -14,7 +14,7 @@ public class Ejercicio1 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Creamos los controles basicos
+        // controles basicos
         Label lblPrecio = new Label("Precio (€)");
         TextField txtPrecio = new TextField();
 
@@ -23,18 +23,18 @@ public class Ejercicio1 extends Application {
 
         Button btnCalcular = new Button("Calcular");
 
-        // 2. Programamos el evento al pulsar el botón
+        // evento 
         btnCalcular.setOnAction(e -> {
             try {
-                // Convertimos el texto a números
+                // Convertimos el texto 
                 double precio = Double.parseDouble(txtPrecio.getText().replace(",","."));
                 double porcentaje = Double.parseDouble(txtDescuento.getText().replace(",","."));
 
-                // Calculamos descuento y precio final
+                //  descuento y precio final
                 double descuentoAplicado = precio * (porcentaje / 100.0);
                 double precioFinal = precio - descuentoAplicado;
 
-                // Creamos y mostramos la ventana emergente (Alert)
+                // Creamos y mostramos la ventana emergente 
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("Info");
                 alert.setHeaderText("Descuento aplicado. Precio inicial " + precio);
@@ -42,7 +42,7 @@ public class Ejercicio1 extends Application {
                 alert.showAndWait();
 
             } catch (NumberFormatException ex) {
-                // Por si el usuario deja un campo vacío o mete letras
+                // Por si el usuario deja un campo vacio o mete letras
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error");
                 error.setHeaderText("Datos no válidos");
@@ -51,11 +51,11 @@ public class Ejercicio1 extends Application {
             }
         });
 
-        // 3. Metemos todo en un VBox (como indica el enunciado)
+        //Metemos todo en un VBox 
         VBox root = new VBox(10, lblPrecio, txtPrecio, lblDescuento, txtDescuento, btnCalcular); // 10px de separación entre elementos
         root.setPadding(new Insets(15));
 
-        // 4. Configuramos la escena y la ventana
+        // Configuramos la escena y la ventana
         Scene scene = new Scene(root, 250, 220);
         primaryStage.setTitle("Ejercicio 1");
         primaryStage.setScene(scene);
